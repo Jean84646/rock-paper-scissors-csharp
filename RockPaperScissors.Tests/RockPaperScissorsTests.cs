@@ -26,5 +26,41 @@ namespace Game.Tests
 
       Assert.AreEqual(pickString, expectedResult);
     }
+    [TestMethod]
+    public void GamePlay_RockVsScissor_RockWin()
+    {
+      int userInput = 1;
+      RockPaperScissor playerOne = new RockPaperScissor(userInput);
+      int computer = 3;
+      string result = "Rock Win";
+
+      string expectedResult = playerOne.GamePlay(computer);
+
+      Assert.AreEqual(result, expectedResult);
+    }
+    [TestMethod]
+    public void GamePlay_PaperVsRock_PaperWin()
+    {
+      int userInput = 2;
+      RockPaperScissor playerOne = new RockPaperScissor(userInput);
+      int computer = 1;
+      string result = "Paper Win";
+
+      string expectedResult = playerOne.GamePlay(computer);
+
+      Assert.AreEqual(result, expectedResult);
+    }
+    [TestMethod]
+    public void GamePlay_ScissorVsScissor_Draw()
+    {
+      int userInput = 3;
+      RockPaperScissor playerOne = new RockPaperScissor(userInput);
+      int computer = 3;
+      string result = "Draw";
+
+      string expectedResult = playerOne.GamePlay(computer);
+
+      Assert.AreEqual(result, expectedResult);
+    }
   }
 }
