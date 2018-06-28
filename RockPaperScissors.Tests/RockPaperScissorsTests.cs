@@ -9,12 +9,22 @@ namespace Game.Tests
     [TestMethod]
     public void GetPick_ReturnUserPick()
     {
-      string userInput = "rock";
+      int userInput = 1;
       RockPaperScissor playerOne = new RockPaperScissor(userInput);
 
-      string expectedResult = playerOne.GetPick();
+      int expectedResult = playerOne.GetPick();
 
       Assert.AreEqual(userInput, expectedResult);
+    }
+    [TestMethod]
+    public void ConvertPick_ReturnPickString()
+    {
+      int userInput = 1;
+      string pickString = "Rock";
+
+      string expectedResult = RockPaperScissor.ConvertPick(userInput);
+
+      Assert.AreEqual(pickString, expectedResult);
     }
   }
 }
